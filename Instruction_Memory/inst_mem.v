@@ -3,7 +3,7 @@ Instruction memory takes in two inputs: A 32-bit Program counter and a 1-bit res
 When reset is set to 0, Based on the value of PC, corresponding 32-bit Instruction code is output
 */
 module inst_mem(
-    input [31:0] PC,
+    input [31:0] pc,
     input reset,
     output [31:0] inst_code
 );
@@ -15,7 +15,7 @@ module inst_mem(
     begin
         if(reset == 1)
         begin
-            
+
             // Setting 32-bit instruction: add t1, s0,s1 => 0x00940333 
             Memory[3] = 8'h00;
             Memory[2] = 8'h94;
