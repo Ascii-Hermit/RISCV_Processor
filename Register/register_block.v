@@ -11,7 +11,7 @@ module register_block(
     input [31:0] write_data,
     output [31:0] read_data1,
     output [31:0] read_data2   
-)
+);
 reg [31:0] reg_memory [31:0];
 
 always@(posedge reset)

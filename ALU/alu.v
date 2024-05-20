@@ -1,3 +1,4 @@
+`include "ALU/alu_defs.v"
 module ALU (
     input [31:0] inp1, 
     input [31:0] inp2,
@@ -5,7 +6,6 @@ module ALU (
     output reg [31:0] alu_result,
     output reg zero_flag
 );
-`include "alu_defs.v"
 always @(*) begin
     case(alu_control)
         `ALU_SHIFTL: 
@@ -20,7 +20,7 @@ always @(*) begin
                 alu_result = {inp1[23:0],8'b00000000};
             else if(inp2[4] == 1'b1)
                 alu_result = {inp1[15:0],16'b0000000000000000};
-            else:
+            else
                 alu_result = inp1;
         end
 
@@ -36,7 +36,7 @@ always @(*) begin
                 alu_result = {8'b00000000,inp1[31:8]};
             else if(inp2[4] == 1'b1)
                 alu_result = {16'b0000000000000000,inp1[31:16]};
-            else:
+            else
                 alu_result = inp1;
         end
 
@@ -52,14 +52,14 @@ always @(*) begin
                 alu_result = {8'b11111111,inp1[31:8]};
             else if(inp2[4] == 1'b1)
                 alu_result = {16'b1111111111111111,inp1[31:16]};
-            else:
+            else
                 alu_result = inp1;
         end
-        `ALU_ADD: alu_result = inp1 + inp 2;
-        `ALU_SUB: alu_result = inp1 - inp 2;
+        `ALU_ADD: alu_result = inp1 + inp2;
+        `ALU_SUB: alu_result = inp1 - inp2;
         `ALU_AND: alu_result = inp1 & inp2;
-        `ALU_OR: alu_result = inp1 | inp 2;
-        `ALU_XOR: alu_result = inp1 ^ inp 2;
+        `ALU_OR: alu_result = inp1 | inp2;
+        `ALU_XOR: alu_result = inp1 ^ inp2;
         `ALU_LESS_THAN: alu_result = (inp1 < inp2)?32'b1:32'b0;
         `ALU_LESS_THAN_SIGNED: 
         begin
@@ -67,13 +67,12 @@ always @(*) begin
                 alu_result  = inp1[31] ? 32'h1 : 32'h0;
             else
                 alu_result  = (inp1 - inp2) ? 32'h1 : 32'h0;            
-       end   ;
-
-        default: alu_result = inp1;
+        end
+         default: alu_result = inp1;
 
     endcase
-    if(alu_result == 0)
     begin
+    if(alu_result == 0)
         zero_flag = 1'b1;
     else 
         zero_flag = 1'b0;

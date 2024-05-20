@@ -8,7 +8,7 @@ module inst_mem(
     output [31:0] inst_code
 );
     reg [7:0] Memory [31:0]; // Byte addressable memory with 32 locations
-    assign inst_code= {Memory[PC+3],Memory[PC+2],Memory[PC+1],Memory[PC]};
+    assign inst_code= {Memory[pc+3],Memory[pc+2],Memory[pc+1],Memory[pc]};
 
     // Initializing memory when reset is one
     always @(reset)
