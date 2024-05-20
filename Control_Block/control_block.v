@@ -3,13 +3,13 @@ module control_block(
     input [6:0] func7,
     input [2:0] func3,
     input [6:0] opcode,
-    output [] reg alu_control,
+    output [3:0] reg alu_control,
     output reg write_on_register
 );
 always@(func7 or func3 or opcode)
 begin
     //for all R-type instrcutions, this is the opcode
-    // refer the doc for all the mappings
+    // refer the doc for all the values of the parameters
     if(opcode = 7'011011)
     begin
         case(func3)

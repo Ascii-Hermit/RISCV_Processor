@@ -3,9 +3,9 @@
 module inst_fetch_unit (
     input clk, reset,
     output [31:0] inst_code,
-    output reg [31:0] pc = 32'b0
 );
 
+reg [31:0] pc = 32'b0;
 inst_mem(pc,reset,inst_code);
 
 always@(posedge clk or posedge reset)
