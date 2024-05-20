@@ -1,6 +1,6 @@
-`include "Control_Block/control_block.v"
-`include "Datapath/datapath.v"
-`include "Instruction_Memory/inst_fetch_unit.v"
+`include "control_block.v"
+`include "datapath.v"
+`include "inst_fetch_unit.v"
 
 module processor(
     input clk,

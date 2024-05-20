@@ -1,0 +1,295 @@
+$date
+	Mon May 20 19:49:48 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module processor_tb $end
+$scope module processor_instance $end
+$var wire 1 ! clk $end
+$var wire 1 " reset $end
+$var wire 1 # zero_flag $end
+$var wire 1 $ write_on_register $end
+$var wire 32 % inst_code [31:0] $end
+$var wire 4 & alu_control [3:0] $end
+$scope module control_block_instance $end
+$var wire 3 ' func3 [2:0] $end
+$var wire 7 ( func7 [6:0] $end
+$var wire 7 ) opcode [6:0] $end
+$var reg 4 * alu_control [3:0] $end
+$var reg 1 $ write_on_register $end
+$upscope $end
+$scope module datapath_instance $end
+$var wire 4 + alu_control [3:0] $end
+$var wire 1 ! clk $end
+$var wire 5 , read_reg1 [4:0] $end
+$var wire 5 - read_reg2 [4:0] $end
+$var wire 1 " reset $end
+$var wire 1 $ write_on_register $end
+$var wire 5 . write_reg [4:0] $end
+$var wire 1 # zero_flag $end
+$var wire 32 / write_data [31:0] $end
+$var wire 32 0 read_data2 [31:0] $end
+$var wire 32 1 read_data1 [31:0] $end
+$scope module alu_instance $end
+$var wire 4 2 alu_control [3:0] $end
+$var wire 32 3 inp2 [31:0] $end
+$var wire 32 4 inp1 [31:0] $end
+$var reg 32 5 alu_result [31:0] $end
+$var reg 1 # zero_flag $end
+$upscope $end
+$scope module register_block_instance $end
+$var wire 1 ! clk $end
+$var wire 32 6 read_data1 [31:0] $end
+$var wire 32 7 read_data2 [31:0] $end
+$var wire 5 8 read_reg_data_1 [4:0] $end
+$var wire 5 9 read_reg_data_2 [4:0] $end
+$var wire 1 " reset $end
+$var wire 32 : write_data [31:0] $end
+$var wire 1 $ write_on_register $end
+$var wire 5 ; write_reg [4:0] $end
+$upscope $end
+$upscope $end
+$scope module inst_fetch_unit_instance $end
+$var wire 1 ! clk $end
+$var wire 1 " reset $end
+$var wire 32 < inst_mem_output [31:0] $end
+$var reg 32 = inst_code [31:0] $end
+$var reg 32 > pc [31:0] $end
+$scope module inst_mem_instance $end
+$var wire 32 ? pc [31:0] $end
+$var wire 1 " reset $end
+$var wire 32 @ inst_code [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b100101000000001100110011 @
+b0 ?
+b0 >
+b100101000000001100110011 =
+b100101000000001100110011 <
+b110 ;
+b1000 :
+b1001 9
+b1000 8
+b1001 7
+b1000 6
+b1000 5
+b1000 4
+b1001 3
+bx 2
+b1000 1
+b1001 0
+b1000 /
+b110 .
+b1001 -
+b1000 ,
+bx +
+bx *
+b110011 )
+b0 (
+b0 '
+bx &
+b100101000000001100110011 %
+x$
+0#
+1"
+0!
+$end
+#20
+1!
+#40
+0!
+#50
+0"
+#60
+b11000 /
+b11000 5
+b11000 :
+b111 .
+b111 ;
+b11001 0
+b11001 3
+b11001 7
+b10011 -
+b10011 9
+b11000 1
+b11000 4
+b11000 6
+b10010 ,
+b10010 8
+b100000 (
+b1000001001110010000001110110011 %
+b1000001001110010000001110110011 =
+b1000001001110010000001110110011 <
+b1000001001110010000001110110011 @
+b100 >
+b100 ?
+1!
+#80
+0!
+#100
+b100000 /
+b100000 5
+b100000 :
+b101 .
+b101 ;
+b100001 0
+b100001 3
+b100001 7
+b10101 -
+b10101 9
+b100000 1
+b100000 4
+b100000 6
+b10100 ,
+b10100 8
+b1 (
+b11010110100000001010110011 %
+b11010110100000001010110011 =
+b11010110100000001010110011 <
+b11010110100000001010110011 @
+b1000 >
+b1000 ?
+1!
+#120
+0!
+#140
+b100010 /
+b100010 5
+b100010 :
+b11100 .
+b11100 ;
+b100011 0
+b100011 3
+b100011 7
+b10111 -
+b10111 9
+b100010 1
+b100010 4
+b100010 6
+b10110 ,
+b10110 8
+b100 '
+b0 (
+b1011110110100111000110011 %
+b1011110110100111000110011 =
+b1011110110100111000110011 <
+b1011110110100111000110011 @
+b1100 >
+b1100 ?
+1!
+#160
+0!
+#180
+b100100 /
+b100100 5
+b100100 :
+b11101 .
+b11101 ;
+b100101 0
+b100101 3
+b100101 7
+b11001 -
+b11001 9
+b100100 1
+b100100 4
+b100100 6
+b11000 ,
+b11000 8
+b1 '
+b1100111000001111010110011 %
+b1100111000001111010110011 =
+b1100111000001111010110011 <
+b1100111000001111010110011 @
+b10000 >
+b10000 ?
+1!
+#200
+0!
+#220
+b100110 /
+b100110 5
+b100110 :
+b11110 .
+b11110 ;
+b100111 0
+b100111 3
+b100111 7
+b11011 -
+b11011 9
+b100110 1
+b100110 4
+b100110 6
+b11010 ,
+b11010 8
+b101 '
+b1101111010101111100110011 %
+b1101111010101111100110011 =
+b1101111010101111100110011 <
+b1101111010101111100110011 @
+b10100 >
+b10100 ?
+1!
+#240
+0!
+#260
+b10010 /
+b10010 5
+b10010 :
+b11111 .
+b11111 ;
+b10011 0
+b10011 3
+b10011 7
+b1101 -
+b1101 9
+b10010 1
+b10010 4
+b10010 6
+b1100 ,
+b1100 8
+b111 '
+b110101100111111110110011 %
+b110101100111111110110011 =
+b110101100111111110110011 <
+b110101100111111110110011 @
+b11000 >
+b11000 ?
+1!
+#280
+0!
+#300
+b10100 /
+b10100 5
+b10100 :
+b10001 .
+b10001 ;
+b10101 0
+b10101 3
+b10101 7
+b1111 -
+b1111 9
+b10100 1
+b10100 4
+b10100 6
+b1110 ,
+b1110 8
+b110 '
+b111101110110100010110011 %
+b111101110110100010110011 =
+b111101110110100010110011 <
+b111101110110100010110011 @
+b11100 >
+b11100 ?
+1!

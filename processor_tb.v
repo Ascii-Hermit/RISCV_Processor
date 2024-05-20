@@ -10,7 +10,7 @@ module processor_tb ();
     initial 
     begin
         $dumpfile("output_wave.vcd");
-        $dumpvars(0,processor_tb);        
+        $dumpvars(0,processor_instance);        
     end
 
     initial
