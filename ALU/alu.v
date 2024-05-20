@@ -1,5 +1,6 @@
 module ALU (
-    input [31:0] inp1, inp2,
+    input [31:0] inp1, 
+    input [31:0] inp2,
     input [3:0] alu_control,
     output reg [31:0] alu_result,
     output reg zero_flag
@@ -71,6 +72,11 @@ always @(*) begin
         default: alu_result = inp1;
 
     endcase
-    
+    if(alu_result == 0)
+    begin
+        zero_flag = 1'b1;
+    else 
+        zero_flag = 1'b0;
+    end    
 end  
 endmodule
